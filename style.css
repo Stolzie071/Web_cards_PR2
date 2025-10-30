@@ -1,0 +1,252 @@
+
+:root{
+  --bg: #f4f6f8;
+  --card-radius: 14px;
+  --gap: 20px;
+  --container-max: 1100px;
+
+  --skeuo-edge: #efe6dc;
+  --skeuo-bg-top: #fbfaf9;
+  --skeuo-bg-bottom: #f3eee9;
+
+  --flat-accent: #0b5fff;
+  --material-accent: #6200ea;
+}
+
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:#111}
+main{max-width:var(--container-max);margin:36px auto;padding:16px;display:grid;gap:28px}
+h1{font-size:20px;margin:0 0 8px}
+
+/* ============ Грид карточек ============ */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--gap);
+  align-items:start;
+  padding:4px;
+}
+
+/* ============ Универсальные правила карточки ============ */
+.card{
+  background:#fff;
+  border-radius:var(--card-radius);
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-height:360px;
+  overflow:hidden;
+}
+
+
+.card .img-wrap,
+.card > img,
+.card img {
+  width:100%;
+  display:block;
+  aspect-ratio: 1 / 1;
+  object-fit:cover;
+  object-position:center center;
+  border-radius:8px;
+}
+
+.card .img-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  display:block;
+}
+
+.card .img-wrap{
+  position:relative;
+  overflow:hidden;
+}
+.card .img-wrap::before{
+  content:"";
+  display:block;
+  padding-top:100%;
+  /* keep rounded corners for the square area */
+  border-radius:8px;
+  pointer-events:none;
+}
+.card .img-wrap img{
+  position:absolute;
+  top:0; left:0; width:100%; height:100%;
+  border-radius:8px;
+}
+
+/* ============ Текстовые элементы ============ */
+.label{font-size:12px;color:#666;text-transform:uppercase;letter-spacing:0.08em}
+.title{font-size:18px;margin:0 0 4px}
+.desc{font-size:14px;color:#444;margin:0 0 8px;line-height:1.45}
+.actions{margin-top:auto;display:flex;gap:12px;align-items:center}
+.btn{padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+.link{font-size:13px;text-decoration:underline;color:inherit}
+
+/* ============ Skeuomorphism ============ */
+.skeuo{
+  background: linear-gradient(180deg, var(--skeuo-bg-top) 0%, var(--skeuo-bg-bottom) 100%);
+  box-shadow: 0 12px 30px rgba(20,18,16,0.18);
+  border: 1px solid rgba(0,0,0,0.06);
+  padding:20px;
+}
+
+.skeuo .img-wrap{
+  border-radius:12px;
+  overflow:hidden;
+  border:6px solid var(--skeuo-edge);
+  box-shadow: inset 0 6px 12px rgba(255,255,255,0.45);
+}
+
+.skeuo .title{
+  font-family: Georgia, "Times New Roman", serif;
+  color:#2b2b2b;
+  font-size:20px;
+}
+.skeuo .desc{ color:#3b2f26; }
+
+.skeuo .btn{
+  background: linear-gradient(180deg,#e7d5c0,#d6bfa6);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.6), 0 4px 8px rgba(0,0,0,0.08);
+  border:1px solid rgba(0,0,0,0.06);
+  color:#2b1f18;
+}
+
+.skeuo .btn:hover,
+.skeuo .btn:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(20,18,16,0.20);
+}
+.skeuo .btn:active {
+  transform: translateY(-1px);
+  box-shadow: inset 0 2px 6px rgba(255,255,255,0.5), 0 6px 14px rgba(0,0,0,0.06);
+}
+
+
+.flat .btn:hover,
+.flat .btn:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(11,95,255,0.08);
+  filter: brightness(0.98);
+}
+.flat .btn:active { transform: translateY(0); filter: brightness(0.94); }
+
+/* ============ Flat design ============ */
+.flat{
+  background:transparent;
+  padding:6px;
+}
+
+.flat .card-wrapper{
+  background:#fff;
+  border-radius:12px;
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-height:340px;
+  border: 0;
+  box-shadow: 0 6px 14px rgba(11,95,255,0.06);
+}
+.flat .title{ color:var(--flat-accent); font-weight:700; }
+.flat .desc{ color:#333; }
+.flat .btn{
+  background:var(--flat-accent);
+  color:white;
+  border-radius:8px;
+  box-shadow:none;
+}
+
+/* ============ Material design ============ */
+.material{
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(15,23,42,0.10);
+  border-left:4px solid var(--material-accent);
+  padding:18px;
+}
+.material .title{ color:#111; font-weight:700; }
+.material .desc{ color:#555; }
+.material .btn{
+  background:var(--material-accent);
+  color:#fff;
+  border-radius:10px;
+  box-shadow:0 6px 12px rgba(98,0,234,0.12);
+  position:relative;
+  overflow:hidden;
+}
+
+.material .btn::after{
+  content:"";
+  position:absolute;
+  left:50%; top:50%;
+  transform:translate(-50%,-50%) scale(0);
+  width:10px; height:10px;
+  background:rgba(255,255,255,0.35);
+  border-radius:50%;
+  opacity:0;
+  pointer-events:none;
+}
+.material .btn.ripple::after{
+  animation:ripple 0.6s linear;
+  opacity:1;
+}
+@keyframes ripple{ to{ transform:translate(-50%,-50%) scale(30); opacity:0 } }
+
+.price{font-weight:700;color:#111}
+
+.material .btn:hover,
+.material .btn:focus-visible {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(98,0,234,0.16);
+}
+.material .btn:active {
+  transform: translateY(0) scale(0.995);
+  box-shadow: 0 6px 14px rgba(98,0,234,0.12);
+}
+
+/* ============ Responsive ============ */
+@media (max-width:1000px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .card{min-height:320px}
+}
+@media (max-width:640px){
+  .cards{grid-template-columns:1fr}
+  .card{min-height:auto;padding:14px}
+  .card .img-wrap,
+  .card > img,
+  .card img { aspect-ratio: 1 / 1; }
+}
+
+.btn {
+  transition: transform 180ms cubic-bezier(.2,.8,.2,1),
+              box-shadow 180ms cubic-bezier(.2,.8,.2,1),
+              opacity 160ms ease,
+              background-color 160ms ease;
+  will-change: transform, box-shadow;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(16,24,40,0.08);
+  opacity: 0.99;
+  outline: none;
+}
+
+.btn:focus-visible {
+  box-shadow: 0 8px 20px rgba(16,24,40,0.08), 0 0 0 4px rgba(11,95,255,0.12);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(16,24,40,0.06);
+  transition-duration: 80ms;
+}
+
+.material .btn.ripple { transition: none; }
+.material .btn:hover::after { background: rgba(255,255,255,0.3); }

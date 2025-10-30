@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Практика 2 — Стили карточек: Skeuomorphism / Flat / Material</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Карточки товара — Skeuomorphism / Flat / Material (адаптивно)</h1>
+    <div class="cards">
+      <!-- SKEUOMORPHISM -->
+      <div class="card skeuo" role="article" aria-label="skeuomorphism">
+        <div class="label">skeuomorphism</div>
+        <div class="img-wrap">
+          <img src="cup.png" alt="Кофейная кружка Vintage">
+        </div>
+        <h2 class="title">Кофейная кружка Vintage</h2>
+        <p class="desc">Керамическая кружка с имитацией текстуры дерева и металлической ручкой. Объём 350 мл. Ручная работа — эффект настоящего материала.</p>
+        <div class="actions">
+          <button class="btn" type="button" aria-label="Купить кружку Vintage">Купить — 1290₽</button>
+          <a class="link" href="https://example.com/product-vintage" target="_blank" rel="noopener noreferrer">Подробнее</a>
+        </div>
+      </div>
+
+      <!-- FLAT DESIGN -->
+      <div class="card flat" role="article" aria-label="flat design">
+        <div class="label">flat design</div>
+        <div class="card-wrapper">
+          <img src="cup.png" alt="Кофейная кружка Vintage">
+          <h2 class="title">Кофейная кружка Vintage</h2>
+          <p class="desc">Керамическая кружка с имитацией текстуры дерева и металлической ручкой. Объём 350 мл. Ручная работа — эффект настоящего материала.</p>
+          <div class="actions">
+            <button class="btn" type="button" aria-label="Купить кружку Vintage">Купить — 1290₽</button>
+            <a class="link" href="https://example.com/product-vintage" target="_blank" rel="noopener noreferrer">Подробнее</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATERIAL DESIGN -->
+      <div class="card material" role="article" aria-label="material design">
+        <div class="label">material design</div>
+        <img src="cup.png" alt="Кофейная кружка Vintage">
+        <h2 class="title">Кофейная кружка Vintage</h2>
+        <p class="desc">Керамическая кружка с имитацией текстуры дерева и металлической ручкой. Объём 350 мл. Ручная работа — эффект настоящего материала.</p>
+        <div class="actions">
+          <button class="btn" id="materialBuy" type="button" aria-label="Купить рюкзак Urban Pro">Купить — 1290₽</button>
+          <a class="link" href="https://example.com/product-vintage" target="_blank" rel="noopener noreferrer">Подробнее</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
