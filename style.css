@@ -19,7 +19,7 @@ html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Seg
 main{max-width:var(--container-max);margin:36px auto;padding:16px;display:grid;gap:28px}
 h1{font-size:20px;margin:0 0 8px}
 
-/* ============ Грид карточек ============ */
+/*  Грид карточек  */
 .cards{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -28,7 +28,7 @@ h1{font-size:20px;margin:0 0 8px}
   padding:4px;
 }
 
-/* ============ Универсальные правила карточки ============ */
+/*  Универсальные правила карточки  */
 .card{
   background:#fff;
   border-radius:var(--card-radius);
@@ -77,7 +77,7 @@ h1{font-size:20px;margin:0 0 8px}
   border-radius:8px;
 }
 
-/* ============ Текстовые элементы ============ */
+/*  Текстовые элементы  */
 .label{font-size:12px;color:#666;text-transform:uppercase;letter-spacing:0.08em}
 .title{font-size:18px;margin:0 0 4px}
 .desc{font-size:14px;color:#444;margin:0 0 8px;line-height:1.45}
@@ -85,7 +85,7 @@ h1{font-size:20px;margin:0 0 8px}
 .btn{padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
 .link{font-size:13px;text-decoration:underline;color:inherit}
 
-/* ============ Skeuomorphism ============ */
+/*  Skeuomorphism  */
 .skeuo{
   background: linear-gradient(180deg, var(--skeuo-bg-top) 0%, var(--skeuo-bg-bottom) 100%);
   box-shadow: 0 12px 30px rgba(20,18,16,0.18);
@@ -133,7 +133,7 @@ h1{font-size:20px;margin:0 0 8px}
 }
 .flat .btn:active { transform: translateY(0); filter: brightness(0.94); }
 
-/* ============ Flat design ============ */
+/*  Flat design  */
 .flat{
   background:transparent;
   padding:6px;
@@ -159,7 +159,7 @@ h1{font-size:20px;margin:0 0 8px}
   box-shadow:none;
 }
 
-/* ============ Material design ============ */
+/*  Material design  */
 .material{
   background:#fff;
   border-radius:12px;
@@ -207,7 +207,7 @@ h1{font-size:20px;margin:0 0 8px}
   box-shadow: 0 6px 14px rgba(98,0,234,0.12);
 }
 
-/* ============ Responsive ============ */
+
 @media (max-width:1000px){
   .cards{grid-template-columns:repeat(2,1fr)}
   .card{min-height:320px}
@@ -249,4 +249,5 @@ h1{font-size:20px;margin:0 0 8px}
 
 .material .btn.ripple { transition: none; }
 .material .btn:hover::after { background: rgba(255,255,255,0.3); }
+
 
