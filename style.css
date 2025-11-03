@@ -68,7 +68,6 @@ h1{font-size:20px;margin:0 0 8px}
   content:"";
   display:block;
   padding-top:100%;
-  /* keep rounded corners for the square area */
   border-radius:8px;
   pointer-events:none;
 }
@@ -250,3 +249,4 @@ h1{font-size:20px;margin:0 0 8px}
 
 .material .btn.ripple { transition: none; }
 .material .btn:hover::after { background: rgba(255,255,255,0.3); }
+
